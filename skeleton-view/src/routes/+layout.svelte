@@ -14,7 +14,9 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
+				<a href= '../'>
 				<strong class="text-xl">cUltuRed.</strong>
+				</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a

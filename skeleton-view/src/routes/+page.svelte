@@ -3,7 +3,8 @@
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<h2 class="h2">Welcome!</h2>
-		<h3 class="h3">Review books, be <strong class="bold">cUltuRed.</strong></h3>
+		<h3 class="h3">Don't just write code. Review some books.<br>
+			 <strong class="bold">be cUltuRed.</strong></h3>
 		<!-- Animated Logo -->
 		<figure>
 			<section class="img-bg" />
@@ -14,8 +15,6 @@
 			<a
 				class="btn variant-filled"
 				href="./all-books"
-				target="_blank"
-				rel="noreferrer"
 			>
 				Review books
 			</a>
