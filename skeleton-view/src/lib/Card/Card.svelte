@@ -4,7 +4,7 @@
     export let image_path: string;
 </script>
 <div class="">
-    <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-10">
+    <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-5">
         <!-- <a href="#"> -->
             <img class="rounded-t-md w-full h-auto " src={image_path} alt="" />
         <!-- </a> -->

@@ -7,13 +7,14 @@
 	 */
 	let posts = [];
 	onMount(() => {
-		fetch('http://localhost:5000/')
+		fetch('http://localhost:5000/all-books')
 			.then((response) => {
 				return response.json();
 			})
 			.then((result) => {
 				console.log(posts);
 				posts = result;
+				console.log(posts)
 			});
 	});
 	import Card from '$lib/Card/Card.svelte';

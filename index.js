@@ -3,14 +3,15 @@ const app = express()
 const port = 5000
 const pool = require("./db")
 app.use(express.json())
-
-app.get("/", async (req,res) => {
+const cors = require('cors');
+app.use(cors({ origin: 'http://localhost:5173' }));
+app.get("/all-books", async (req,res) => {
     try{
-        const table = await pool.query('SELECT * FROM reviews', (err, res) => {
+        const table = await pool.query('SELECT * FROM my_bookshop', (err, result) => {
             if (err) {
                 console.error(err);
               } else {
-                console.log(res.rows);
+                res.status(200).send(result.rows)
                 // Process the retrieved data here
               }
         })
