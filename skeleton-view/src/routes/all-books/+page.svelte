@@ -19,10 +19,7 @@
 	});
 	import Card from '$lib/Card/Card.svelte';
 
-    // let bookTitle = "Title";
-    // let imagePath = "";
-	// let ratingValue = 0;
-	// let maxRating = 5;
+	let book_desc = ''
 
 </script>
 
@@ -34,7 +31,9 @@
 		
         title={post.title}
         image_path = { post.image_path}
-		cardRating = {post.average}	
+		cardRating = {post.average_rating}
+		description = {`${post.book_desc.slice(0,100)}...`}
+		author = {post.author}
         />
 		<hr />
 	{/each}
