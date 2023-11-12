@@ -18,8 +18,11 @@
 			});
 	});
 	import Card from '$lib/Card/Card.svelte';
-    let bookTitle = "Title";
-    let imagePath = "";
+
+    // let bookTitle = "Title";
+    // let imagePath = "";
+	// let ratingValue = 0;
+	// let maxRating = 5;
 
 </script>
 
@@ -27,10 +30,11 @@
 	<div class="container m-10 flex flex-wrap">
         {#each posts as post (post.book_id)}
 		<!-- <h2>({post.title}) {post.author}</h2> -->
-        
 		<Card 
-        title={bookTitle = post.title}
-        image_path = { imagePath = post.image_path}
+		
+        title={post.title}
+        image_path = { post.image_path}
+		cardRating = {post.average}	
         />
 		<hr />
 	{/each}
