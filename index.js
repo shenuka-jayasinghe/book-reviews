@@ -13,6 +13,7 @@ app.get("/all-books", async (req,res) => {
         (ARRAY_AGG(book_desc))[1] AS book_desc,\
         (ARRAY_AGG(image_path))[1] AS image_path,\
         AVG(rating)::NUMERIC(10,1) AS average_rating,\
+        ARRAY_AGG(rating) AS ratings,\
         ARRAY_AGG(review) AS reviews\
         FROM book_reviews\
      FULL OUTER JOIN my_bookshop ON book_reviews.book_id = my_bookshop.book_id\

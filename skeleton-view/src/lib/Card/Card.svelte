@@ -3,6 +3,7 @@
     export let  title: string;
     export let image_path: string;
     export let cardRating = 0;
+    export let numberOfRatings = 0;
     export let description: string;
     export let author: string;
     import Rating from "./Rating.svelte";
@@ -21,6 +22,7 @@
             <!-- </a> -->
             <Rating
             ratingValue = {cardRating}
+            ratingNumber = {numberOfRatings}
             />
             <p class="pb-3 pt-3 text-gray-700 dark:text-gray-300">{author}</p>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{description}</p>

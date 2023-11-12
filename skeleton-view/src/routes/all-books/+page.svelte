@@ -34,6 +34,7 @@
 		cardRating = {post.average_rating}
 		description = {`${post.book_desc.slice(0,100)}...`}
 		author = {post.author}
+		numberOfRatings = {post.ratings.length}
         />
 		<hr />
 	{/each}
