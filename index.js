@@ -5,7 +5,7 @@ const pool = require("./db")
 app.use(express.json())
 const cors = require('cors');
 app.use(cors({ origin: 'http://localhost:5173' }));
-app.get("/all-books", async (req,res) => {
+app.get("/books", async (req,res) => {
     try{
         const table = await pool.query('SELECT my_bookshop.book_id,\
         (ARRAY_AGG(title))[1] AS title,\

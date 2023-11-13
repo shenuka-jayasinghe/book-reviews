@@ -7,7 +7,7 @@
 	 */
 	let posts = [];
 	onMount(() => {
-		fetch('http://localhost:5000/all-books')
+		fetch('http://localhost:5000/books')
 			.then((response) => {
 				return response.json();
 			})
@@ -23,11 +23,12 @@
 
 </script>
 
-<div class="container m-10">
-	<div class="container m-10 flex flex-wrap">
+<div class="container justify-center">
+	<div class="container m-[10%] flex flex-wrap">
         {#each posts as post (post.book_id)}
 		<!-- <h2>({post.title}) {post.author}</h2> -->
-		<Card 
+		<a href = './books/{post.title}'>
+			<Card 
 		
         title={post.title}
         image_path = { post.image_path}
@@ -36,7 +37,9 @@
 		author = {post.author}
 		numberOfRatings = {post.ratings.length}
         />
+		</a>
 		<hr />
+		
 	{/each}
     </div>
 
