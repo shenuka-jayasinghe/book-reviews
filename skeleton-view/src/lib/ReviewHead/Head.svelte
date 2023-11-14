@@ -2,6 +2,7 @@
 	import Breadcrumb from "./Breadcrumb.svelte";
     import Rating from "$lib/Card/Rating.svelte";
 	import Button from "./Button.svelte";
+    export let lastCrumb = 'f';
     export let cardRating = 3;
     export let numberOfRatings = 28;
     export let imagePath = 'https://m.media-amazon.com/images/I/81FBh5Q17xL._SL1500_.jpg'
@@ -22,7 +23,9 @@
         <div class=" flex flex-col">
             <div class="basis-1/2">
                 <div class="pt-3">
-                    <Breadcrumb/>
+                    <Breadcrumb
+                    lastCrumb = {lastCrumb}
+                    />
                 </div>
             </div>
             <div class=" basis-1/2">
