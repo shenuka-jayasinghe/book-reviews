@@ -6,6 +6,8 @@
     export let numberOfRatings = 0;
     export let description: string;
     export let author: string;
+    export let genres = ['test1', 'test2'];
+    import GenreButton from "./GenreButton.svelte";
     import Rating from "./Rating.svelte";
 </script>
 
@@ -15,12 +17,17 @@
     
         <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-5 transition-transform transform hover:scale-105">
             <!-- <a href="#"> -->
-                <img class="rounded-t-md w-full h-[360px] object-cover object-top" src={image_path} alt="" />
+                <img class="rounded-t-md w-full h-[260px] object-cover object-top" src={image_path} alt="" />
             <!-- </a> -->
             <div class="p-5">
                 <!-- <a href="#"> -->
                     <div class="">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white min-h-[60px]">{title}</h5>
+                    <div class="py-4 min-h-[150px]">
+                        <GenreButton
+                        {genres}
+                        />
+                    </div>
                     </div>
                 <!-- </a> -->
                 <Rating
