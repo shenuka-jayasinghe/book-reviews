@@ -7,7 +7,7 @@
 	 */
 	let posts = [];
 	onMount(() => {
-		fetch('http://localhost:5000/books')
+		fetch('http://localhost:5000/api/book')
 			.then((response) => {
 				return response.json();
 			})
@@ -26,6 +26,7 @@
 <div class="container justify-center">
 	<div class="container m-[10%] flex flex-wrap">
         {#each posts as post (post.book_id)}
+		{post.genres}
 		<!-- <h2>({post.title}) {post.author}</h2> -->
 		<a href = './books/{post.title}'>
 			<Card 

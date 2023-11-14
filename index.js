@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express()
 const port = 5000
-const pool = require("./db")
+const db = require("./db/connection")
 app.use(express.json())
 const cors = require('cors');
 app.use(cors({ origin: 'http://localhost:5173' }));
 app.get("/books", async (req,res) => {
     try{
-        const table = await pool.query('SELECT my_bookshop.book_id,\
+        const table = await db.query('SELECT my_bookshop.book_id,\
         (ARRAY_AGG(title))[1] AS title,\
         (ARRAY_AGG(author))[1] AS author,\
         (ARRAY_AGG(book_desc))[1] AS book_desc,\
@@ -40,7 +40,7 @@ app.post("/reviews", async (req, res) => {
     try {
         const { review, rating } = req.body
         console.log("posted", review, rating )
-        const newReview = await pool.query("INSERT INTO reviews (review, rating) VALUES($1, $2) RETURNING *;", [review, rating]);
+        const newReview = await db.query("INSERT INTO reviews (review, rating) VALUES($1, $2) RETURNING *;", [review, rating]);
         res.json(newReview.rows[0])
         console.log("succes!")
     } 
