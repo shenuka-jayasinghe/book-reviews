@@ -1,5 +1,5 @@
 const db = require('../../db/connection')
-const { cleanGenres } = require('../../utils/cleanGenres')
+const { cleanGenresAndReviews } = require('../../utils/cleanGenresAndReviews')
 
 exports.getBooksdB = () => {
     return db.query(`
@@ -22,7 +22,7 @@ exports.getBooksdB = () => {
  ORDER BY my_bookshop.book_id
  LIMIT 8;
     `).then(({rows})=>{
-        return cleanGenres(rows)
+        return cleanGenresAndReviews(rows)
     })
 }
 
@@ -46,6 +46,6 @@ exports.getBookByIdDb = (id) => {
  WHERE my_bookshop.book_id = $1
  GROUP BY my_bookshop.book_id;
     `, [id]).then(({rows})=>{
-        return cleanGenres(rows)
+        return cleanGenresAndReviews(rows)
     })
 }

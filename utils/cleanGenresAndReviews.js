@@ -1,5 +1,5 @@
 const testData = require('../__tests__/testData')
-exports.cleanGenres = (objArray) => {
+exports.cleanGenresAndReviews = (objArray) => {
     const books = objArray.map ( obj => {
       const objCopy = {...obj}
       return objCopy
@@ -15,6 +15,9 @@ exports.cleanGenres = (objArray) => {
       })
       const cleanedGenres = genresWithDuplicates.filter( (element, index) =>  genresWithDuplicates.indexOf(element) === index )
       book.genres = cleanedGenres
+      const reviewsWithDuplicates = book.reviews
+      const cleanedReviews = reviewsWithDuplicates.filter( (review, index) => reviewsWithDuplicates.indexOf(review) === index)
+      book.reviews = cleanedReviews
     })
     return books
 

@@ -4,8 +4,9 @@
 import { onMount } from 'svelte';
   import Head from '$lib/ReviewHead/Head.svelte';
   import Tab from '$lib/Tab/Tab.svelte';
-  import ScrollContainer from '$lib/Tab/ScrollContainer.svelte';
   import { page } from '$app/stores';
+  
+
 
 	const bookId = $page.params.bookId;
 	/**
@@ -13,11 +14,13 @@ import { onMount } from 'svelte';
 	 */
 	let library = [];
 	let titles = []; 
+	let bookIds = [];
     let image_paths = []; 
     let cardRatings = [];
     let numberOfRatings = [];
     let descriptions = []; 
     let authors = []; 
+	let ratings = [];
 	let post;
 	let fetchBook = () => {return fetch(`http://localhost:5000/api/book/${bookId}`)}
 	let fetchLibrary = () => {return fetch(`http://localhost:5000/api/book`)}
@@ -37,6 +40,7 @@ import { onMount } from 'svelte';
 
 
 		titles = filteredBooks.map( book => book.title)
+		bookIds = filteredBooks.map( book => book.book_id)
 		authors = filteredBooks.map( book => book.author)
 		image_paths = filteredBooks.map( book => book.image_path)
 		cardRatings = filteredBooks.map( book => book.average_rating)
@@ -70,14 +74,15 @@ import { onMount } from 'svelte';
 <div class="my-[30px] mx-[10%]">
 	<Tab
 	info = {post.book_desc}
-
+	{bookIds}
 	{titles}
 	{authors}
 	{image_paths}
 	{cardRatings}
 	{numberOfRatings}
-	{descriptions}
-
+	ratings = {post.ratings}
+	reviewRatings = {post.ratings}
+	reviews = {post.reviews}
 
 	 />
 
