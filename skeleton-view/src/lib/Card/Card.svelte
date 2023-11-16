@@ -15,7 +15,7 @@
     <section class="img-bg " />
     <div class="">
     
-        <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-5 transition-transform transform hover:scale-105">
+        <div class="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-5 transition-transform transform hover:scale-105 hover:shadow-2xl">
             <!-- <a href="#"> -->
                 <img class="rounded-t-md w-full h-[260px] object-cover object-top" src={image_path} alt="" />
             <!-- </a> -->

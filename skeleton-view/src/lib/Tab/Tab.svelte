@@ -1,12 +1,12 @@
 <script>
 	import { TabGroup, Tab, TabAnchor } from '@skeletonlabs/skeleton';
 	let tabSet = 0;
-	export let title = 't';
-	export let image_path = 't';
-	export let cardRating = 0;
-	export let numberOfRatings = 0;
-	export let description = 't';
-	export let author = 't';
+	export let titles = ['n', 'n', 's', 't'];
+    export let image_paths = ['t', 'e', 's', 't'];
+    export let cardRatings = [1,2,3,4];
+    export let numberOfRatings = [1,2,3,4];
+    export let descriptions = ['t', 'e', 's', 't'];
+    export let authors = ['n', 'e', 's', 't']; 
 	export let info =
 		"Wells' work is a groundbreaking science fiction classic that vividly depicts an alien invasion and the ensuing struggle for survival. The narrative's tension and vivid descriptions create an immersive reading experience.";
 	import ScrollContainer from './ScrollContainer.svelte';
@@ -24,17 +24,17 @@
 	<svelte:fragment slot="panel">
 		{#if tabSet === 0}
 			{info}
-			<h5 class="my-3 text-2xl tracking-tight text-gray-900 dark:text-white min-h-[60px]">
+			<h5 class="mt-10 text-2xl tracking-tight text-gray-900 dark:text-white min-h-[60px]">
 				Readers of this book also enjoyed
 			</h5>
 			<div>
 				<ScrollContainer
-					{title}
-					{image_path}
-					{cardRating}
+					{titles}
+					{image_paths}
+					{cardRatings}
 					{numberOfRatings}
-					{description}
-					{author}
+					{descriptions}
+					{authors}
 				/>
 			</div>
 		{:else if tabSet === 1}

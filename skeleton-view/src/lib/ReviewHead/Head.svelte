@@ -5,6 +5,9 @@
     export let lastCrumb = 'f';
     export let cardRating = 3;
     export let numberOfRatings = 28;
+    export let title = ''
+    export let author = ''
+    export let price = '12.00';
     export let imagePath = 'https://m.media-amazon.com/images/I/81FBh5Q17xL._SL1500_.jpg'
 </script>
 
@@ -29,10 +32,10 @@
                 </div>
             </div>
             <div class=" basis-1/2">
-                <h5 class="my-3 text-5xl tracking-tight text-gray-900 dark:text-white min-h-[60px]">The War of the Worlds</h5>
+                <h5 class="my-3 text-5xl tracking-tight text-gray-900 dark:text-white min-h-[60px]">{title}</h5>
             </div>
             <div class=" basis-1/2">
-                <p class="pb-3 pt-3 text-gray-700 dark:text-gray-300">by <span class="underline">H. G. Wells</span></p>
+                <p class="pb-3 pt-3 text-gray-700 dark:text-gray-300">by <span class="underline">{author}</span></p>
             </div>
             <div class=" basis-1/2">
                 <div class="py-2">
@@ -46,7 +49,7 @@
                 <p class="pt-2 text-gray-700 dark:text-gray-300">Total Pages: 584</p>
             </div>
             <div class=" basis-1/2">
-                <p class="pt-2 text-gray-700 dark:text-gray-300">Price: £12.00</p>
+                <p class="pt-2 text-gray-700 dark:text-gray-300">{`Price: £${price}`}</p>
             </div>
             <div class=" basis-1/2">
             </div>

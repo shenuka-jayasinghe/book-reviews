@@ -17,7 +17,6 @@
 			});
 	});
 	import Card from '$lib/Card/Card.svelte';
-
 	let book_desc = ''
 
 </script>
@@ -26,7 +25,7 @@
 	<div class="container m-[10%] flex flex-wrap">
         {#each posts as post (post.book_id)}
 		<!-- <h2>({post.title}) {post.author}</h2> -->
-		<a href = './books/{post.title}'>
+		<a href = './books/{post.book_id}'>
 			<Card 
 		
         title={post.title}
@@ -40,7 +39,7 @@
 		</a>
 		<hr />
 		
-	{/each}
+		{/each}
     </div>
 
 </div>
