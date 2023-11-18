@@ -68,6 +68,7 @@ import { onMount } from 'svelte';
 	cardRating = {post.average_rating}
 	numberOfRatings = {post.ratings.length}
 	price = {post.price_in_pence}
+	{bookId}
 	/>
 
 </div>
