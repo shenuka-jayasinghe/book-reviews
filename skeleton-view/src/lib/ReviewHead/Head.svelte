@@ -1,6 +1,10 @@
 <script>
+    import { getModalStore } from '@skeletonlabs/skeleton';
+
+    const modalStore = getModalStore();
 	import Breadcrumb from "./Breadcrumb.svelte";
     import Rating from "$lib/Card/Rating.svelte";
+	// @ts-ignore
 	import Button from "./Button.svelte";
     export let lastCrumb = 'f';
     export let cardRating = 3;
@@ -9,6 +13,23 @@
     export let author = ''
     export let price = '12.00';
     export let imagePath = 'https://m.media-amazon.com/images/I/81FBh5Q17xL._SL1500_.jpg'
+
+
+  const modal = {
+    type: 'prompt',
+    title: 'Add review',
+    body: 'How did you like this book?',
+    value: '',
+    valueAttr: { type: 'text', minlength: 3, maxlength: 10, required: true },
+    response: (/** @type {any} */ r) => console.log('response:', r),
+  };
+
+  // @ts-ignore
+  function openPromptModal() {
+    // @ts-ignore
+    modalStore.trigger(modal);
+  }
+
 </script>
 
 <div class=" flex flex-row">
@@ -55,7 +76,9 @@
             </div>
             <div class=" basis-1/2">
                <div class="pt-4">
-                <Button/>
+                <button on:click={openPromptModal} class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 px-4 border border-gray-400 rounded">
+                    <span>Add your review</span>
+                </button>
                </div>
             </div>
         </div>
