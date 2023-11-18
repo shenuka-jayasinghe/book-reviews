@@ -12,7 +12,7 @@
 
 <figure>
     <section class="img-bg " />
-   <a href="../books/{bookId}">
+   <a href="../books/{bookId}" target="_self">
     <div class="">
     
         <div class="max-w-xs min-w-[300px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-5 transition-transform transform hover:scale-105 hover:shadow-2xl">

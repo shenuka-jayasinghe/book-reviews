@@ -1,8 +1,10 @@
-const db = require('../../db/connection')
-const { cleanGenresAndReviews } = require('../../utils/cleanGenresAndReviews')
+const db = require("../../db/connection");
+const { cleanGenresAndReviews } = require("../../utils/cleanGenresAndReviews");
 
 exports.getBooksdB = () => {
-    return db.query(`
+  return db
+    .query(
+      `
     SELECT my_bookshop.book_id,
     (ARRAY_AGG(title))[1] AS title,
     (ARRAY_AGG(author))[1] AS author,
@@ -19,15 +21,18 @@ exports.getBooksdB = () => {
  JOIN book_genres ON book_genres.book_id = my_bookshop.book_id
  JOIN genres ON book_genres.genre_id = genres.id
  GROUP BY my_bookshop.book_id 
- ORDER BY my_bookshop.book_id
- LIMIT 8;
-    `).then(({rows})=>{
-        return cleanGenresAndReviews(rows)
-    })
-}
+ ORDER BY my_bookshop.book_id;
+    `
+    )
+    .then(({ rows }) => {
+      return cleanGenresAndReviews(rows);
+    });
+};
 
 exports.getBookByIdDb = (id) => {
-    return db.query(`
+  return db
+    .query(
+      `
     SELECT my_bookshop.book_id,
     (ARRAY_AGG(title))[1] AS title,
     (ARRAY_AGG(author))[1] AS author,
@@ -45,7 +50,36 @@ exports.getBookByIdDb = (id) => {
  JOIN genres ON book_genres.genre_id = genres.id
  WHERE my_bookshop.book_id = $1
  GROUP BY my_bookshop.book_id;
-    `, [id]).then(({rows})=>{
-        return cleanGenresAndReviews(rows)
+    `,
+      [id]
+    )
+    .then(({ rows }) => {
+      return cleanGenresAndReviews(rows);
+    });
+};
+
+exports.postBookReviewsDb = (book_id, body) => {
+  const { review, rating } = body;
+  return db
+    .query(
+      `INSERT INTO reviews (review, rating)
+            VALUES ($1 , $2 ) RETURNING *;`,
+      [review, rating]
+    )
+    .then(({ rows }) => {
+      const { id } = rows[0];
+      return db.query(
+        `INSERT INTO book_reviews ( book_id, review_id)
+            VALUES ($1, $2)
+            RETURNING *;`,
+        [book_id, id]
+      );
     })
-}
+    .then(() => {
+      return { msg: "Thank you for reviewing!" };
+    })
+    .catch((err) => {
+      console.log(err);
+      // return Promise.reject()
+    });
+};
