@@ -4,7 +4,7 @@ const db = require('../db/connection')
 app.use(express.json())
 const cors = require('cors');
 const { getBooks, getBookbyId, postBookReviews } = require("./controllers/book.controller");
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors());
 
 app.get('/api/book', getBooks )
 
