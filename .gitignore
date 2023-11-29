@@ -1,2 +1,5 @@
 node_modules
 test.txt
+.env.local
+.env.prod
+.env.test

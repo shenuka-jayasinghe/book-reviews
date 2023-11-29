@@ -12,4 +12,8 @@ app.get('/api/book/:id', getBookbyId )
 
 app.post('/api/book/:id', postBookReviews)
 
+app.get('/api/healthcheck', (req, res) => {
+    res.status(200).send({msg:'healthy'})
+})
+
 module.exports = app

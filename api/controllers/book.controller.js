@@ -2,6 +2,7 @@ const { getBooksdB, getBookByIdDb, postBookReviewsDb } = require("../models/book
 
 exports.getBooks = (req, res) => {
     getBooksdB().then( result =>{
+        console.log("successful request")
         res.status(200).send(result)
     })
 }
