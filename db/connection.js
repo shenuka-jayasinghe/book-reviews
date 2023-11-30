@@ -9,7 +9,7 @@ const PGPASSWORD = process.env.PGPASSWORD
 const PGUSER = process.env.PGUSER
 const PGPORT = process.env.PGPORT
 const PGHOST = process.env.PGHOST
-
+console.log("HOST IS --->",PGHOST)
 
 const pool = new Pool({
   user: PGUSER,
