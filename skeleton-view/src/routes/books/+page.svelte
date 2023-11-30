@@ -8,7 +8,7 @@
 	let posts = [];
 	let genres = [];
 	onMount(() => {
-		fetch('http://localhost:5000/api/book')
+		fetch('https://book-review-api.onrender.com/api/book')
 			.then((response) => {
 				return response.json();
 			})
