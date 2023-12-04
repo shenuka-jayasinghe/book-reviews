@@ -22,8 +22,8 @@ import { onMount } from 'svelte';
     let authors = []; 
 	let ratings = [];
 	let post;
-	let fetchBook = () => {return fetch(`http://localhost:5000/api/book/${bookId}`)}
-	let fetchLibrary = () => {return fetch(`http://localhost:5000/api/book`)}
+	let fetchBook = () => {return fetch(`https://book-review-api.onrender.com/api/book/${bookId}`)}
+	let fetchLibrary = () => {return fetch(`https://book-review-api.onrender.com/api/book`)}
 	// let fetchLibrary = fetch()
 	onMount(() => {
     Promise.all([fetchBook(), fetchLibrary()])
