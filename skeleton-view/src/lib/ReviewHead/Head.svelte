@@ -20,7 +20,7 @@
 	 * @param {undefined} [review]
 	 */
 	async function doPost(review) {
-		const res = await fetch(`http://localhost:5000/api/book/${bookId}`, {
+		const res = await fetch(`https://book-review-api.onrender.com/api/book/${bookId}`, {
 			method: 'POST',
 			body: JSON.stringify({
 				review,
