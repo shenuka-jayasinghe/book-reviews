@@ -47,8 +47,12 @@
     </div>
 </figure>
 
-
 <style lang="postcss">
-
-
+    @media (max-width: 640px) {
+        /* Adjust the max-width and padding as needed for smaller screens */
+        .max-w-xs {
+            max-width: 100%;
+            padding: 1rem;
+        }
+    }
 </style>
