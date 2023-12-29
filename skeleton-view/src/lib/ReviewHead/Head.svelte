@@ -5,6 +5,7 @@
 	const handleToggleModal = () => {
 		showModal = !showModal;
 	};
+	let open = false
 
 	const modalStore = getModalStore();
 	import Breadcrumb from './Breadcrumb.svelte';

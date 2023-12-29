@@ -1,6 +1,6 @@
 <script>
     import { createEventDispatcher } from 'svelte'
-    export const open = false
+    export let open = false
     export let title = ''
     const dispatch = createEventDispatcher()
   </script>
