@@ -60,7 +60,8 @@ exports.getBookByIdDb = (id) => {
 
 exports.postBookReviewsDb = (book_id, body) => {
   const { review, rating } = body;
-  return db
+  if(review !== "false"){
+    return db
     .query(
       `INSERT INTO reviews (review, rating)
             VALUES ($1 , $2 ) RETURNING *;`,
@@ -82,4 +83,5 @@ exports.postBookReviewsDb = (book_id, body) => {
       console.log(err);
       // return Promise.reject()
     });
+  }
 };

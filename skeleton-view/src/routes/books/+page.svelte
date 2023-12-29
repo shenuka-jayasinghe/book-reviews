@@ -1,5 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
+	import ReviewModal from '$lib/ReviewHead/ReviewModal.svelte';
+  	let showModal = false
+  	const handleToggleModal = () => {
+    showModal = !showModal
+  }
 
 	// @ts-ignore
 	/**
@@ -38,7 +43,6 @@
         />
 		</a>
 		<hr />
-		
 		{/each}
     </div>
 

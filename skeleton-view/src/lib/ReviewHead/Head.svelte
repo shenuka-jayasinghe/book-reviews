@@ -1,5 +1,10 @@
 <script>
 	import { getModalStore } from '@skeletonlabs/skeleton';
+	import ReviewModal from './ReviewModal.svelte';
+	export let showModal = false;
+	const handleToggleModal = () => {
+		showModal = !showModal;
+	};
 
 	const modalStore = getModalStore();
 	import Breadcrumb from './Breadcrumb.svelte';
@@ -39,18 +44,17 @@
 		value: '',
 		valueAttr: { type: 'text', minlength: 3, maxlength: 100, required: true },
 		response: (/** @type {any} */ r) => {
-			doPost(r)
-				.then(() => {
-					window.location.reload();
-				})
+			doPost(r).then(() => {
+				window.location.reload();
+			});
 		}
 	};
 
 	// @ts-ignore
-	function openPromptModal() {
-		// @ts-ignore
-		modalStore.trigger(modal);
-	}
+	// function openPromptModal() {
+	// 	// @ts-ignore
+	// 	modalStore.trigger(modal);
+	// }
 </script>
 
 <div class=" flex flex-row">
@@ -95,12 +99,16 @@
 			<div class=" basis-1/2" />
 			<div class=" basis-1/2">
 				<div class="pt-4">
-					<button
+					<!-- <button
 						on:click={openPromptModal}
 						class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 px-4 border border-gray-400 rounded"
 					>
 						<span>Add your review</span>
-					</button>
+					</button> -->
+					<button on:click={() => handleToggleModal()}>Open modal</button>
+					<ReviewModal title="Edit your details" open={showModal} on:close={() => handleToggleModal()}>
+						<svelte:fragment slot="body">This is content inside my modal! 👋</svelte:fragment>
+					</ReviewModal>
 				</div>
 			</div>
 		</div>

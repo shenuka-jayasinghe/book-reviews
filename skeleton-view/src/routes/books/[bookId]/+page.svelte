@@ -46,10 +46,6 @@ import { onMount } from 'svelte';
 		cardRatings = filteredBooks.map( book => book.average_rating)
 		numberOfRatings = filteredBooks.map( book => book.ratings.length)
 		descriptions = filteredBooks.map( book => `${book.book_desc.slice(0,100)}...`)
-
-		
-		
-
         // handle libraryResult if needed
       })
       .catch((error) => {
