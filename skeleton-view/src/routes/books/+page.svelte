@@ -30,15 +30,15 @@
 
     setTimeout(() => {
       showParagraph3 = true;
-    }, 10000);
+    }, 20000);
 
     setTimeout(() => {
       showParagraph4 = true;
-    }, 15000);
+    }, 25000);
 
 	setTimeout(() => {
       showParagraph5 = true;
-    }, 20000)
+    }, 30000)
 			fetch('https://book-review-api.onrender.com/api/book')
 			.then((response) => {
 				return response.json();
