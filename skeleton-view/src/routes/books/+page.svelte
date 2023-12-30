@@ -59,7 +59,7 @@
 
 <div class="container justify-center">
 
-{#if posts.length === 7 }
+{#if posts.length < 7 }
 <div class="container m-[2rem]">
 	<ProgressBar animIndeterminate="anim-progress-bar"/>
   

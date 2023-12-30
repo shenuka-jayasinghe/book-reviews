@@ -7,15 +7,7 @@
 	 */
 	let posts = [];
 	let genres = [];
-	onMount(() => {
-		fetch('https://book-review-api.onrender.com/api/book')
-			.then((response) => {
-				return response.json();
-			})
-			.then((result) => {
-				posts = result;
-			});
-	});
+	
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center">
