@@ -22,23 +22,23 @@
 	onMount(() => {
 		setTimeout(() => {
       showParagraph1 = true;
-    }, 1000);
+    }, 10000);
 
     setTimeout(() => {
       showParagraph2 = true;
-    }, 20000);
+    }, 15000);
 
     setTimeout(() => {
       showParagraph3 = true;
-    }, 30000);
+    }, 10000);
 
     setTimeout(() => {
       showParagraph4 = true;
-    }, 40000);
+    }, 15000);
 
 	setTimeout(() => {
       showParagraph5 = true;
-    }, 50000)
+    }, 20000)
 			fetch('https://book-review-api.onrender.com/api/book')
 			.then((response) => {
 				return response.json();
