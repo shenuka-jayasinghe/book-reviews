@@ -45,6 +45,7 @@
 			})
 			.then((result) => {
 				posts = result;
+				console.log(result)
 			});
 	});
 	import Card from '$lib/Card/Card.svelte';
@@ -58,7 +59,7 @@
 
 <div class="container justify-center">
 
-{#if showParagraph5 === true }
+{#if posts.length === 7 }
 <div class="container m-[2rem]">
 	<ProgressBar animIndeterminate="anim-progress-bar"/>
   
