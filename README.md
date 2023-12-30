@@ -32,16 +32,18 @@ You can find more on her design case study here: https://uxdesign.cc/designing-a
 
 ## Backend - Node and Express
 
-Model (book.model.js):
+### Model (book.model.js):
 
 The model handles interactions with the database.
 Functions like getBooksdB, getBookByIdDb, and postBookReviewsDb are responsible for database operations related to books.
-Controller (book.controller.js):
+
+### Controller (book.controller.js):
 
 The controller acts as an intermediary between the model and the routes.
 Functions like getBooks, getBookbyId, and postBookReviews represent different actions or endpoints.
 They call corresponding functions from the model to fetch or manipulate data and then send the appropriate response.
-Routes (app.js):
+
+### Routes (app.js):
 
 The routes define the API endpoints and specify which controller function should handle each endpoint.
 The express application uses routes like /api/book, /api/book/:id, and /api/healthcheck.
