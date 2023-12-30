@@ -14,6 +14,8 @@ Please allow for about 40s for the site to load as it is client-side rendred, an
 4. Responsive Design: Enjoy a seamless experience on various devices, ensuring a consistent and engaging interface.
 
 ![Screenshot from 2023-12-30 20-02-46](https://github.com/shenuka-jayasinghe/book-reviews/assets/137282472/590cd74c-12fd-4c97-a7db-19b7afc1bf6b)
+![Screenshot from 2023-12-30 20-02-34](https://github.com/shenuka-jayasinghe/book-reviews/assets/137282472/4c28325e-6535-4f6d-b715-193453df5d9e)
+![Screenshot from 2023-12-30 20-02-39](https://github.com/shenuka-jayasinghe/book-reviews/assets/137282472/3df7393e-9fd9-491e-8e2f-5d05009bfe2e)
 ![Screenshot from 2023-12-30 20-03-01](https://github.com/shenuka-jayasinghe/book-reviews/assets/137282472/d486eaee-c1f0-4341-bda5-df00665fb80d)
 ![Screenshot from 2023-12-30 20-03-09](https://github.com/shenuka-jayasinghe/book-reviews/assets/137282472/3fae4a2d-6284-437c-8bd0-a22828872b23)
 ![Screenshot from 2023-12-30 20-03-19](https://github.com/shenuka-jayasinghe/book-reviews/assets/137282472/51e93393-552e-4ca6-946e-a2952e661497)
