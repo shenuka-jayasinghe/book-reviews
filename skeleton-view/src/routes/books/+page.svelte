@@ -72,11 +72,11 @@
 	{/if}
   
 	{#if showParagraph3}
-	  <p class="m-[1rem]">Why is it so slow?</p>
+	  <p class="m-[1rem]">Thank you for waiting!</p>
 	{/if}
   
 	{#if showParagraph4}
-	  <p class="m-[1rem]">Because it's free!</p>
+	  <p class="m-[1rem]">It's slow, because it's free!</p>
 	{/if}
 
 	{#if showParagraph5}
