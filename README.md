@@ -8,7 +8,7 @@ Please allow for about 40s for the site to load as it is client-side rendred, an
 
 ## Design
 
-Design wireframes were inspired by Ahwini Kalmane R
+Design wireframes were inspired by Ahwini Kalmane R. <breaK>
 You can find more on her design case study here: https://uxdesign.cc/designing-a-system-for-book-reviews-a-ux-case-study-e8a85dd13c1d
 ![ezgif-3-ea5274843b](https://github.com/shenuka-jayasinghe/book-reviews/assets/137282472/8d446b0d-05be-4c19-880b-4501a0c40f7d)
 
