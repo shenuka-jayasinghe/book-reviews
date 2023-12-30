@@ -1,4 +1,4 @@
-# Book review app using PostfreSQL | Express | Sveltekit | NodeJS
+# Book review app using PostgreSQL | Express | Sveltekit | NodeJS
 
 This app was written for demonstration purposes only, to highlight my skills as a full-stack engineer.
 
