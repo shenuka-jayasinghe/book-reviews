@@ -1,2 +1,2 @@
-const seed = require('./seed')
+const { seed } = require('./seed')
 seed();
